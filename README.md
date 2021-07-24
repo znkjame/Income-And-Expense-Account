@@ -1,19 +1,20 @@
-# incomeexpenseaccount
+# Income and Expense Account
 
-## Project setup
-```
-npm install
-```
+วิธีการ run 
+1.หลังจากการ clone ครั้งแรก ให้ cd ไปที่ dir นั้น
+2.เปิด termanal ใช้คำสั่ง npm install เพื่อทำการลง modules ต่าง ๆ ของ project
+3.ใช้คำสั่ง npm run serve ในการเปิด
+4.เปิดใช้งาน web โดยไปที่ brower ผ่านลิงค์ https://localhost:8080
+5.ปิดการใช้งานโดยกลับไปที่หน้า terminal แล้วกด ctrl+c ถ้ามีการถามว่าต้องการหยุดหรือไม่ให้กด Y
+6.services ของ web ก็จะหยุกทำงานทันที
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+ที่เก็บไฟล์ JSON
+อยู่ใน /public/data.json
 
-### Compiles and minifies for production
-```
-npm run build
-```
+วิธีการใช้งาน web
+1.ใส่รายละเอียดรายรับ-รายจ่ายที่ต้องการจะเพิ่มให้ครบถ้วน
+2.กดปุ่ม Add เพื่อเพิ่มรายการนั้น
+3.สามารถดูรายการรายรับ-รายจ่ายทั้งหมดได้ที่ตารางทางขวามือ
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Made by
+Thammasorn Yimsawat 6210406602
