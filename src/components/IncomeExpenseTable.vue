@@ -39,7 +39,10 @@ export default {
                 details: '',
                 total:''
             },
-            balance: 0
+            balance: 0,
+            totalIncome:0,
+            totalExpense:0,
+            totalLeft:0
         }
     },
     created(){
@@ -49,7 +52,7 @@ export default {
         async fetchIncomeExpense(){
             await IncomeExpenseStore.dispatch('fetchIncomeExpense')
             this.incomeExpense = IncomeExpenseStore.getters.incomeExpense
-        }
+        },
     }
 }
 </script>

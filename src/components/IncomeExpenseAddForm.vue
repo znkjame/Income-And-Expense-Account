@@ -36,7 +36,11 @@
       <div class="button" align='center'>
           <button @click="addIncomeExpense">Add</button>
       </div>
-
+      <div>
+          <div>รายรับทั้งหมด : {{totalIncome}}</div>
+          <div>รายจ่ายทั้งหมด : {{totalExpense}}</div>
+          <div>คงเหลือทั้งหมด : {{totalLeft}}</div>
+      </div>
   </div>
 </template>
 
@@ -54,7 +58,10 @@ export default {
                 details:'',
                 total:0
             },
-            balance:0
+            balance:0,
+            totalIncome:0,
+            totalExpense:0,
+            totalLeft:0
         }
     },
     methods:{
@@ -68,6 +75,7 @@ export default {
                 total: this.from.total,
             }
             IncomeExpenseStore.dispatch('addNewIncomeExpense',payload)
+            this.updateTotalIncomeExpense();
             this.clearForm();
         },
         clearForm(){
@@ -97,7 +105,23 @@ export default {
         updateTotal(){
                 this.incomeExpense.forEach(element => {
                 this.balance = element.total
+                 if(element.type == 'income'){
+                    this.totalIncome+= element.price
+                }
+                else{
+                    this.totalExpense+= element.price
+                }
             });
+            this.totalLeft = this.totalIncome - this.totalExpense
+        },
+        updateTotalIncomeExpense(){
+            if(this.from.type == 'income'){
+                this.totalIncome += parseInt(this.from.price)
+            }
+            else{
+                this.totalExpense += parseInt(this.from.price) 
+            }
+            this.totalLeft = this.totalIncome - this.totalExpense
         }
     },
     created(){
